@@ -1,2 +1,2 @@
-# OnShape MJCF Exporter
-Tool to export OnShape assemblies to MJCF robot definitions.
+# Onshape MJCF Exporter
+Tool to export Onshape assemblies to MJCF robot definitions.
