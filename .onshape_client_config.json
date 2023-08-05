@@ -1,5 +1,11 @@
 {
-  "base_url": "https://cad.onshape.com",
-  "secret_key": "",
-  "access_key": ""
+  "onshape_client": {
+    "base_url": "https://cad.onshape.com",
+    "secret_key": "",
+    "access_key": ""
+  },
+  "stl_export_options": {
+    "units": "meter",
+    "mode": "binary"
+  }
 }

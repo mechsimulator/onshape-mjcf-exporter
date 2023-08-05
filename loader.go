@@ -2,8 +2,6 @@ package main
 
 import (
 	"strings"
-
-	"github.com/onshape-public/go-client/onshape"
 )
 
 type Attributes map[string]string
@@ -82,7 +80,7 @@ func (b BaseElement) GetAttributes() Attributes {
 }
 
 type ModelWriter struct {
-	Client Onshape
+	Model ModelData
 	Root NestedElement
 }
 
@@ -94,14 +92,14 @@ func (n *NestedElement) AppendNested(tag string, attrs Attributes, children []El
 	n.Children = append(n.Children, NewNestedElement(tag, attrs, children))
 }
 
-func GetDocumentName(o Onshape) string {
-	return o.GetResponse(DOCUMENT_REQ).(*onshape.BTDocumentInfo).GetName()
+func GetDocumentName(model ModelData) string {
+	return model.DocumentInfo.GetName()
 }
 
-func NewModelWriter(o Onshape) *ModelWriter {
+func NewModelWriter(model ModelData) *ModelWriter {
 	return &ModelWriter {
-		Client: o,
-		Root: NewNestedElement("mujoco", Attributes{"model": GetDocumentName(o)}, nil),
+		Model: model,
+		Root: NewNestedElement("mujoco", Attributes{"model": GetDocumentName(model)}, nil),
 	}
 }
 

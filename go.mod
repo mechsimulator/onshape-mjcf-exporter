@@ -2,7 +2,10 @@ module onshape-mcjf-exporter
 
 go 1.20
 
-require github.com/onshape-public/go-client v1.167.19303-3cbf47a47fe4
+require (
+	github.com/onshape-public/go-client v1.167.19458-7ff87863110f
+	github.com/ungerik/go3d v0.0.0-20220309204530-55ced4bcb334
+)
 
 require (
 	github.com/golang/protobuf v1.5.3 // indirect
